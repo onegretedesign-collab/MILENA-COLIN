@@ -7,13 +7,13 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* Custom palette matching the elegant warm earthy tones of Milena Colin */
-  --color-warm-cocoa: #2E1A11;
-  --color-warm-terracotta: #8F4F37;
-  --color-warm-clay: #B6866E;
-  --color-warm-beige: #E6DCD2;
-  --color-warm-sand: #F7F3EE;
-  --color-warm-gold: #D4AF37;
-  --color-warm-accent: #A66E4E;
+  --color-warm-cocoa: #4A3C36;
+  --color-warm-terracotta: #AD786B;
+  --color-warm-clay: #C9A99D;
+  --color-warm-beige: #EFE7E0;
+  --color-warm-sand: #FAF8F5;
+  --color-warm-gold: #D7B77E;
+  --color-warm-accent: #C29688;
 }
 
 body {

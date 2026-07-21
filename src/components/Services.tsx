@@ -16,21 +16,21 @@ export default function Services({ onOpenContact }: ServicesProps) {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "users":
-        return <Users className="w-8 h-8 text-white" />;
+        return <Users className="w-8 h-8 text-warm-terracotta" />;
       case "eye":
-        return <Eye className="w-8 h-8 text-white" />;
+        return <Eye className="w-8 h-8 text-warm-terracotta" />;
       case "heart":
-        default:
-        return <Heart className="w-8 h-8 text-white" />;
+      default:
+        return <Heart className="w-8 h-8 text-warm-terracotta" />;
     }
   };
 
   return (
-    <section id="atendimentos" className="py-24 bg-warm-terracotta text-white relative overflow-hidden">
+    <section id="atendimentos" className="py-24 bg-warm-sand text-warm-cocoa relative overflow-hidden">
       {/* Soft overlay patterns */}
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-warm-cocoa/30 blur-3xl pointer-events-none" />
-      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-warm-clay/30 blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#00000002_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-warm-terracotta/5 blur-3xl pointer-events-none" />
+      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-warm-clay/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10 text-center space-y-16">
         
@@ -40,7 +40,7 @@ export default function Services({ onOpenContact }: ServicesProps) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="font-mono text-xs tracking-widest text-warm-beige uppercase font-bold"
+            className="font-mono text-xs tracking-widest text-warm-terracotta uppercase font-bold"
           >
             Acolhimento & Suporte
           </motion.span>
@@ -49,17 +49,17 @@ export default function Services({ onOpenContact }: ServicesProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-serif text-4xl sm:text-5xl font-light"
+            className="font-serif text-4xl sm:text-5xl font-light text-warm-cocoa"
           >
             {SERVICES_SECTION_DATA.title}
           </motion.h2>
-          <div className="h-[1px] w-20 bg-warm-beige/40 mx-auto" />
+          <div className="h-[1px] w-20 bg-warm-clay/30 mx-auto" />
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-sans text-base sm:text-lg md:text-xl text-warm-beige/90 leading-relaxed font-light"
+            className="font-sans text-base sm:text-lg md:text-xl text-warm-cocoa/85 leading-relaxed font-light"
           >
             {SERVICES_SECTION_DATA.description}
           </motion.p>
@@ -75,17 +75,17 @@ export default function Services({ onOpenContact }: ServicesProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-warm-cocoa/45 border border-white/10 rounded-[28px] p-8 flex flex-col items-center justify-center text-center space-y-4 shadow-xl backdrop-blur-sm"
+              className="bg-white border border-warm-beige rounded-[28px] p-8 flex flex-col items-center justify-center text-center space-y-4 shadow-sm backdrop-blur-sm"
             >
               {/* Outer icon container */}
-              <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center mb-2">
+              <div className="w-16 h-16 rounded-2xl bg-warm-terracotta/10 border border-warm-terracotta/20 flex items-center justify-center mb-2">
                 {getIcon(stat.iconName)}
               </div>
               <div className="space-y-1">
-                <span className="text-4xl sm:text-5xl font-serif font-bold tracking-tight text-warm-beige block">
+                <span className="text-4xl sm:text-5xl font-serif font-bold tracking-tight text-warm-terracotta block">
                   {stat.value}
                 </span>
-                <span className="text-xs sm:text-sm font-sans font-medium text-white/90 uppercase tracking-widest block">
+                <span className="text-xs sm:text-sm font-sans font-medium text-warm-cocoa/80 uppercase tracking-widest block">
                   {stat.label}
                 </span>
               </div>

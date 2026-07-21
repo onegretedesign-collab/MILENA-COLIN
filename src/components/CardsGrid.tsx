@@ -239,23 +239,23 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
           <motion.div
             whileHover={{ y: -6 }}
             transition={{ duration: 0.3 }}
-            className="bg-warm-cocoa text-warm-sand border border-warm-cocoa rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-lg relative overflow-hidden group md:col-span-2 lg:col-span-1"
+            className="bg-[#FDFBF9] text-warm-cocoa border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group md:col-span-2 lg:col-span-1"
           >
             {/* Elegant luxury visual style */}
-            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-warm-terracotta/20 to-transparent rounded-bl-[100px]" />
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-warm-terracotta/10 to-transparent rounded-bl-[100px]" />
             
             <div className="space-y-6 z-10">
-              <div className="w-12 h-12 rounded-2xl bg-warm-sand/10 border border-warm-sand/25 flex items-center justify-center text-warm-beige">
+              <div className="w-12 h-12 rounded-2xl bg-warm-terracotta/10 border border-warm-terracotta/20 flex items-center justify-center text-warm-terracotta">
                 <Calendar className="w-5 h-5" />
               </div>
               <div className="space-y-3">
-                <h3 className="font-serif text-3xl font-light text-white uppercase tracking-tight">
+                <h3 className="font-serif text-3xl font-light text-warm-cocoa uppercase tracking-tight">
                   Agende <span className="font-semibold block text-warm-clay italic font-serif">seu horário</span>
                 </h3>
-                <p className="font-sans text-sm text-warm-sand/80 leading-relaxed font-light">
+                <p className="font-sans text-sm text-warm-cocoa/80 leading-relaxed font-light">
                   {APPOINTMENT_CTA_DATA.description}
                 </p>
-                <p className="font-mono text-[10px] tracking-wider text-warm-gold uppercase pt-1">
+                <p className="font-mono text-[10px] tracking-wider text-warm-terracotta uppercase pt-1">
                   {APPOINTMENT_CTA_DATA.subtext}
                 </p>
               </div>
@@ -264,7 +264,7 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
             <div className="pt-6 z-10">
               <button
                 onClick={onOpenContact}
-                className="w-full bg-warm-terracotta hover:bg-white hover:text-warm-cocoa text-white font-medium py-3 px-5 rounded-full text-sm transition-all duration-300 shadow-md cursor-pointer text-center"
+                className="w-full bg-warm-terracotta hover:bg-warm-cocoa hover:text-white text-white font-medium py-3 px-5 rounded-full text-sm transition-all duration-300 shadow-md cursor-pointer text-center"
               >
                 Agendar Consulta Online / Presencial
               </button>
