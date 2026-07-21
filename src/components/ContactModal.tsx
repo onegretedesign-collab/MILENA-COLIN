@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, CheckCircle, Send, MessageSquare, AlertCircle, Calendar } from "lucide-react";
 
@@ -24,6 +24,18 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
+
+  // Lock body scroll when the modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -61,14 +73,14 @@ Agradeço o acolhimento! 🙏`;
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-warm-cocoa/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-warm-cocoa/60 backdrop-blur-sm"
           />
 
           {/* Modal Container */}
@@ -76,8 +88,8 @@ Agradeço o acolhimento! 🙏`;
             initial={{ opacity: 0, scale: 0.95, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
-            transition={{ type: "spring", duration: 0.5 }}
-            className="bg-warm-sand border border-warm-beige w-full max-w-lg rounded-[32px] overflow-hidden shadow-2xl relative z-10 p-8 md:p-10 text-warm-cocoa"
+            transition={{ type: "spring", duration: 0.4 }}
+            className="bg-warm-sand border border-warm-beige w-full max-w-lg rounded-[28px] sm:rounded-[32px] shadow-2xl relative z-10 p-5 sm:p-8 md:p-10 text-warm-cocoa max-h-[calc(100vh-2rem)] overflow-y-auto scrollbar-thin"
           >
             {/* Close button */}
             <button

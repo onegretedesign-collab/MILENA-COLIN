@@ -43,9 +43,9 @@ export default function About() {
                 />
 
                 {/* Overlaid minimal certification tag */}
-                <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-md border border-warm-beige/55 px-4 py-2 rounded-full shadow-sm flex items-center space-x-2 z-10">
-                  <ShieldCheck className="w-4 h-4 text-warm-terracotta" />
-                  <span className="font-mono text-[10px] tracking-widest text-warm-cocoa font-bold uppercase">Psicoterapia Baseada em Evidências</span>
+                <div className="absolute top-4 left-4 right-4 md:top-6 md:right-6 md:left-auto bg-white/95 backdrop-blur-md border border-warm-beige/55 px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-sm flex items-center justify-center space-x-1.5 z-10">
+                  <ShieldCheck className="w-4 h-4 text-warm-terracotta flex-shrink-0" />
+                  <span className="font-mono text-[8px] sm:text-[9px] md:text-[10px] tracking-wider md:tracking-widest text-warm-cocoa font-bold uppercase whitespace-nowrap">Psicoterapia Baseada em Evidências</span>
                 </div>
               </div>
             </motion.div>

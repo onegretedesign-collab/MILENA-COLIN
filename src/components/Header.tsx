@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, MouseEvent } from "react";
+import { useState, useEffect, MouseEvent } from "react";
 import { Menu, X, Calendar, MessageSquare } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -13,6 +13,18 @@ interface HeaderProps {
 
 export default function Header({ onOpenContact }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   const navLinks = [
     { label: "Início", href: "#inicio" },
@@ -86,41 +98,75 @@ export default function Header({ onOpenContact }: HeaderProps) {
         {/* Mobile Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-warm-cocoa hover:text-warm-terracotta p-2 transition-colors focus:outline-none"
+          className="md:hidden text-warm-cocoa hover:text-warm-terracotta p-2 transition-colors focus:outline-none cursor-pointer"
           aria-label="Toggle Menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Drawer Navigation */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-warm-sand border-b border-warm-beige overflow-hidden"
-          >
-            <div className="px-6 py-6 flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => handleScroll(e, link.href)}
-                  className="text-base font-medium text-warm-cocoa/90 hover:text-warm-terracotta py-2 transition-colors block border-b border-warm-beige/30"
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 z-50 bg-warm-cocoa/40 backdrop-blur-xs md:hidden"
+            />
+
+            {/* Sidebar drawer panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 220 }}
+              className="fixed right-0 top-0 bottom-0 w-[300px] max-w-[85vw] bg-warm-sand z-50 shadow-2xl border-l border-warm-beige flex flex-col md:hidden h-screen"
+            >
+              {/* Header inside drawer */}
+              <div className="p-6 flex items-center justify-between border-b border-warm-beige/60">
+                <div className="flex flex-col items-start">
+                  <span className="font-serif text-base tracking-widest text-warm-terracotta font-semibold uppercase">
+                    MILENA COLIN
+                  </span>
+                  <span className="font-mono text-[9px] tracking-wider text-warm-clay uppercase">
+                    Psicologia Integrativa
+                  </span>
+                </div>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-warm-cocoa hover:text-warm-terracotta p-1.5 transition-colors focus:outline-none cursor-pointer"
+                  aria-label="Close Menu"
                 >
-                  {link.label}
-                </a>
-              ))}
-              <div className="pt-4 flex flex-col gap-3">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Navigation Links inside drawer */}
+              <div className="px-6 py-6 flex flex-col space-y-4 overflow-y-auto flex-grow">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => handleScroll(e, link.href)}
+                    className="text-base font-medium text-warm-cocoa/90 hover:text-warm-terracotta py-2 transition-colors block border-b border-warm-beige/30 pb-2"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+
+              {/* Action Buttons inside drawer */}
+              <div className="p-6 border-t border-warm-beige/60 flex flex-col gap-3 bg-warm-sand/90">
                 <button
                   onClick={() => {
                     setIsOpen(false);
                     onOpenContact();
                   }}
-                  className="flex items-center justify-center space-x-2 bg-warm-terracotta hover:bg-warm-cocoa text-warm-sand font-medium py-3 rounded-full transition-colors w-full cursor-pointer shadow-sm"
+                  className="flex items-center justify-center space-x-2 bg-warm-terracotta hover:bg-warm-cocoa text-warm-sand font-medium py-3 rounded-full transition-colors w-full cursor-pointer shadow-sm text-sm"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Agendar Horário</span>
@@ -129,14 +175,14 @@ export default function Header({ onOpenContact }: HeaderProps) {
                   href="https://wa.me/5564999891234?text=Ol%C3%A1%2C%20Dra.%20Milena%20Colin!%20%E2%9C%A8%20Venho%20atrav%C3%A9s%20do%20seu%20site%20e%20gostaria%20de%20solicitar%20o%20agendamento%20de%20uma%20consulta."
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-center space-x-2 border border-warm-terracotta text-warm-terracotta hover:bg-warm-terracotta hover:text-warm-sand font-medium py-3 rounded-full transition-all w-full text-center"
+                  className="flex items-center justify-center space-x-2 border border-warm-terracotta text-warm-terracotta hover:bg-warm-terracotta hover:text-warm-sand font-medium py-3 rounded-full transition-all w-full text-center text-sm"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>Falar no WhatsApp</span>
                 </a>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>

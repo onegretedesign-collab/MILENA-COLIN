@@ -137,17 +137,17 @@ export default function Hero({ onOpenContact }: HeroProps) {
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-warm-cocoa via-warm-cocoa/40 to-transparent pointer-events-none" />
               
               {/* Subtle glassmorphic tag on bottom of image */}
-              <div className="absolute bottom-6 left-6 right-6 bg-warm-cocoa/75 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center justify-between z-10">
-                <div>
-                  <h4 className="font-serif text-sm font-semibold text-white">Dra. Milena Colin</h4>
-                  <p className="text-[10px] font-mono text-warm-clay uppercase tracking-wider">CRP Ativo • Especialista Integrativa</p>
+              <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 bg-warm-cocoa/80 backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 flex items-center justify-between z-10">
+                <div className="min-w-0 flex-1 pr-2">
+                  <h4 className="font-serif text-xs sm:text-sm font-semibold text-white truncate">Dra. Milena Colin</h4>
+                  <p className="text-[8px] sm:text-[10px] font-mono text-warm-clay uppercase tracking-wider truncate">CRP Ativo • Especialista Integrativa</p>
                 </div>
-                <div className="flex -space-x-1.5">
-                  <div className="w-7 h-7 rounded-full bg-warm-terracotta flex items-center justify-center border border-warm-cocoa">
-                    <Heart className="w-3.5 h-3.5 text-white" />
+                <div className="flex -space-x-1.5 flex-shrink-0">
+                  <div className="w-6 h-6 sm:w-7 h-7 rounded-full bg-warm-terracotta flex items-center justify-center border border-warm-cocoa">
+                    <Heart className="w-3 h-3 sm:w-3.5 h-3.5 text-white" />
                   </div>
-                  <div className="w-7 h-7 rounded-full bg-warm-gold flex items-center justify-center border border-warm-cocoa">
-                    <Award className="w-3.5 h-3.5 text-warm-cocoa" />
+                  <div className="w-6 h-6 sm:w-7 h-7 rounded-full bg-warm-gold flex items-center justify-center border border-warm-cocoa">
+                    <Award className="w-3 h-3 sm:w-3.5 h-3.5 text-warm-cocoa" />
                   </div>
                 </div>
               </div>

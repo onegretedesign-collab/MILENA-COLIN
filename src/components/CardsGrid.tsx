@@ -59,7 +59,7 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
           <motion.div
             whileHover={{ y: -6 }}
             transition={{ duration: 0.3 }}
-            className="bg-[#EFE8E2] border border-warm-beige rounded-[32px] p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group"
+            className="bg-[#EFE8E2] border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group"
           >
             {/* Real image of Milena / support photo integrated beautifully as background/accent */}
             <div className="absolute top-0 right-0 w-1/3 h-full opacity-20 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none hidden sm:block">
@@ -102,7 +102,7 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
           <motion.div
             whileHover={{ y: -6 }}
             transition={{ duration: 0.3 }}
-            className="bg-white border border-warm-beige rounded-[32px] p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group"
+            className="bg-white border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group"
           >
             {/* Graphic design element */}
             <div className="absolute bottom-0 right-0 left-0 h-1/3 bg-gradient-to-t from-warm-sand/40 to-transparent pointer-events-none" />
@@ -138,7 +138,7 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
           <motion.div
             whileHover={{ y: -6 }}
             transition={{ duration: 0.3 }}
-            className="bg-[#FBF9F6] border border-warm-beige rounded-[32px] p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group md:col-span-2 lg:col-span-1"
+            className="bg-[#FBF9F6] border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group md:col-span-2 lg:col-span-1"
           >
             <div className="space-y-6 z-10">
               <div className="w-12 h-12 rounded-2xl bg-warm-accent/10 border border-warm-accent/20 flex items-center justify-center text-warm-accent">
@@ -161,7 +161,7 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
           </motion.div>
 
           {/* CARD 4: Depoimentos Reais - Asymmetric grid element span */}
-          <div id="depoimentos" className="bg-[#E6DCD2]/50 border border-warm-beige rounded-[32px] p-8 flex flex-col justify-between h-[420px] shadow-sm md:col-span-2 relative overflow-hidden scroll-mt-24">
+          <div className="bg-[#E6DCD2]/50 border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm md:col-span-2 relative overflow-hidden">
             <div className="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-warm-clay/10 blur-xl" />
             
             <div className="flex items-center justify-between mb-4">
@@ -239,7 +239,7 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
           <motion.div
             whileHover={{ y: -6 }}
             transition={{ duration: 0.3 }}
-            className="bg-warm-cocoa text-warm-sand border border-warm-cocoa rounded-[32px] p-8 flex flex-col justify-between h-[420px] shadow-lg relative overflow-hidden group md:col-span-2 lg:col-span-1"
+            className="bg-warm-cocoa text-warm-sand border border-warm-cocoa rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-lg relative overflow-hidden group md:col-span-2 lg:col-span-1"
           >
             {/* Elegant luxury visual style */}
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-warm-terracotta/20 to-transparent rounded-bl-[100px]" />
