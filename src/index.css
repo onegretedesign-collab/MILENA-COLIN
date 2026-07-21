@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom palette matching the elegant warm earthy tones of Milena Colin */
+  --color-warm-cocoa: #2E1A11;
+  --color-warm-terracotta: #8F4F37;
+  --color-warm-clay: #B6866E;
+  --color-warm-beige: #E6DCD2;
+  --color-warm-sand: #F7F3EE;
+  --color-warm-gold: #D4AF37;
+  --color-warm-accent: #A66E4E;
+}
+
+body {
+  background-color: var(--color-warm-sand);
+  color: var(--color-warm-cocoa);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Elegant scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-warm-sand);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-clay);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-warm-terracotta);
+}
