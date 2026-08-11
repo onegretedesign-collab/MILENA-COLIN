@@ -12,6 +12,20 @@ export interface Testimonial {
   rating?: number;
 }
 
+export interface CourseItem {
+  id: string;
+  title: string;
+  category: string;
+  image: string;
+  checkoutUrl: string;
+  price?: string;
+  originalPrice?: string;
+  badge?: string;
+  description: string;
+  features?: string[];
+  initialLikes: number;
+}
+
 export interface Course {
   id: string;
   title: string;

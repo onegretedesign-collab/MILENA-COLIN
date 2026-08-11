@@ -40,7 +40,7 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
   };
 
   return (
-    <section id="cursos" className="py-24 bg-warm-sand/50 relative">
+    <section id="bento-grid" className="py-24 bg-warm-sand/50 relative">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Modern Section Header */}
@@ -61,19 +61,10 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
             transition={{ duration: 0.3 }}
             className="bg-[#EFE8E2] border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group"
           >
-            {/* Real image of Milena / support photo integrated beautifully as background/accent */}
-            <div className="absolute top-0 right-0 w-1/3 h-full opacity-20 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none hidden sm:block">
-              <img 
-                src="https://i.postimg.cc/N0dWnrNc/IMG-3300.png" 
-                alt="Curso Milena Colin" 
-                className="w-full h-full object-cover object-center"
-                referrerPolicy="no-referrer"
-              />
-            </div>
             {/* Soft decorative background circles */}
             <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-warm-terracotta/5 transition-transform group-hover:scale-125 duration-500" />
             
-            <div className="space-y-6 z-10 max-w-[85%] sm:max-w-[70%]">
+            <div className="space-y-6 z-10 w-full">
               <div className="w-12 h-12 rounded-2xl bg-warm-terracotta/10 border border-warm-terracotta/20 flex items-center justify-center text-warm-terracotta">
                 <BookOpen className="w-5 h-5" />
               </div>
@@ -88,13 +79,13 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
             </div>
 
             <div className="pt-6 z-10">
-              <button 
-                onClick={onOpenContact}
+              <a 
+                href="#cursos"
                 className="inline-flex items-center space-x-2 text-sm font-semibold text-warm-terracotta group-hover:text-warm-cocoa transition-colors"
               >
-                <span>Saber mais sobre as turmas</span>
+                <span>Ver catálogo de cursos</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </button>
+              </a>
             </div>
           </motion.div>
 

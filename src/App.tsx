@@ -6,6 +6,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import CoursesSalesSection from "./components/CoursesSalesSection";
 import CardsGrid from "./components/CardsGrid";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
@@ -34,6 +35,7 @@ export default function App() {
       {/* Main Content Sections */}
       <main className="flex-grow">
         <Hero onOpenContact={handleOpenContact} />
+        <CoursesSalesSection />
         <CardsGrid onOpenContact={handleOpenContact} />
         <About />
         <Testimonials />
