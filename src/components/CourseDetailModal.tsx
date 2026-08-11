@@ -5,7 +5,7 @@
 
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { X, CheckCircle2, ExternalLink, ShieldCheck, Heart, Sparkles } from "lucide-react";
+import { X, Check, ExternalLink, ShieldCheck, Heart } from "lucide-react";
 import { CourseItem } from "../types";
 
 interface CourseDetailModalProps {
@@ -42,107 +42,102 @@ export default function CourseDetailModal({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-warm-cocoa/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-warm-cocoa/40 backdrop-blur-md"
           />
 
-          {/* Modal Container */}
+          {/* Minimalist Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 15 }}
+            initial={{ opacity: 0, scale: 0.96, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 15 }}
-            transition={{ type: "spring", duration: 0.4 }}
-            className="bg-warm-sand border border-warm-beige w-full max-w-2xl rounded-[28px] sm:rounded-[32px] shadow-2xl relative z-10 overflow-hidden text-warm-cocoa max-h-[calc(100vh-2rem)] flex flex-col"
+            exit={{ opacity: 0, scale: 0.96, y: 12 }}
+            transition={{ type: "spring", stiffness: 300, damping: 28 }}
+            className="bg-[#FAF7F3] border border-warm-beige/80 w-full max-w-xl rounded-3xl shadow-2xl relative z-10 overflow-hidden text-warm-cocoa max-h-[calc(100vh-3rem)] flex flex-col"
           >
-            {/* Header Image with Floating Tags */}
-            <div className="relative w-full h-56 sm:h-72 bg-warm-cocoa/10 overflow-hidden flex-shrink-0">
+            {/* Header Image Frame */}
+            <div className="relative w-full h-52 sm:h-64 bg-warm-sand/60 overflow-hidden flex-shrink-0">
               <img
                 src={course.image}
                 alt={course.title}
                 className="w-full h-full object-cover object-center"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-warm-cocoa/80 via-transparent to-black/30 pointer-events-none" />
 
-              {/* Close button */}
+              {/* Minimal Gradient for Contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F3] via-transparent to-black/20 pointer-events-none" />
+
+              {/* Floating Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 bg-white/80 hover:bg-white text-warm-cocoa p-2 rounded-full transition-colors shadow-md z-20 cursor-pointer"
-                aria-label="Fechar"
+                className="absolute top-4 right-4 bg-white/90 hover:bg-white text-warm-cocoa/80 hover:text-warm-cocoa p-2.5 rounded-full transition-all shadow-sm z-20 cursor-pointer"
+                aria-label="Fechar modal"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
 
-              {/* Like Button on modal image */}
+              {/* Like Pill */}
               <button
                 onClick={() => onToggleLike(course.id)}
-                className="absolute top-4 left-4 bg-white/85 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center space-x-1.5 shadow-md z-20 cursor-pointer hover:bg-white transition-all"
+                className="absolute top-4 left-4 bg-white/90 hover:bg-white text-warm-cocoa text-xs font-medium px-3.5 py-1.5 rounded-full flex items-center space-x-1.5 shadow-sm z-20 cursor-pointer transition-all active:scale-95"
               >
                 <Heart
-                  className={`w-4 h-4 transition-colors ${
+                  className={`w-3.5 h-3.5 transition-colors ${
                     isLiked
                       ? "fill-red-500 text-red-500"
-                      : "text-warm-cocoa hover:text-red-500"
+                      : "text-warm-cocoa/70 hover:text-red-500"
                   }`}
                 />
-                <span className="text-xs font-semibold text-warm-cocoa font-mono">
+                <span className="font-mono text-xs text-warm-cocoa">
                   {likeCount}
                 </span>
               </button>
 
-              {/* Title & Badge Overlaid at bottom of image */}
-              <div className="absolute bottom-4 left-4 right-4 text-white z-10 space-y-1">
-                {course.badge && (
-                  <span className="inline-block bg-warm-terracotta text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full font-semibold">
+              {/* Badge */}
+              {course.badge && (
+                <div className="absolute bottom-4 left-6 z-10">
+                  <span className="bg-warm-terracotta text-white font-mono text-[10px] tracking-widest uppercase font-semibold px-3 py-1 rounded-full shadow-xs">
                     {course.badge}
                   </span>
-                )}
-                <h3 className="font-serif text-2xl sm:text-3xl font-light text-white leading-tight drop-shadow-sm">
+                </div>
+              )}
+            </div>
+
+            {/* Modal Body */}
+            <div className="px-6 sm:px-8 pt-2 pb-6 overflow-y-auto space-y-6 flex-grow scrollbar-none">
+              
+              {/* Category & Title */}
+              <div className="space-y-1.5">
+                <span className="font-mono text-[11px] tracking-widest text-warm-terracotta uppercase font-semibold">
+                  {course.category}
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl text-warm-cocoa font-normal leading-snug">
                   {course.title}
                 </h3>
               </div>
-            </div>
-
-            {/* Modal Scrollable Body */}
-            <div className="p-6 sm:p-8 overflow-y-auto space-y-6 flex-grow scrollbar-thin">
-              {/* Category & Status */}
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-warm-beige/80 pb-4">
-                <span className="text-xs font-mono tracking-wider text-warm-accent uppercase font-semibold bg-warm-terracotta/10 px-3 py-1 rounded-full">
-                  {course.category}
-                </span>
-                <span className="text-xs font-sans font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 flex items-center space-x-1">
-                  <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>{course.price || "Inscrições Abertas"}</span>
-                </span>
-              </div>
 
               {/* Description */}
-              <div className="space-y-2">
-                <h4 className="font-serif text-lg font-semibold text-warm-cocoa">
-                  Sobre esta formação
-                </h4>
-                <p className="font-sans text-sm sm:text-base text-warm-cocoa/85 leading-relaxed font-light">
-                  {course.description}
-                </p>
-              </div>
+              <p className="font-sans text-sm sm:text-base text-warm-cocoa/80 leading-relaxed font-light">
+                {course.description}
+              </p>
 
-              {/* Features / Modules checklist */}
+              {/* Key Features */}
               {course.features && course.features.length > 0 && (
-                <div className="space-y-3 bg-white/70 border border-warm-beige p-5 rounded-2xl">
-                  <h4 className="font-serif text-base font-semibold text-warm-cocoa flex items-center space-x-2">
-                    <ShieldCheck className="w-4 h-4 text-warm-terracotta" />
-                    <span>O que você vai encontrar:</span>
+                <div className="bg-white/80 border border-warm-beige/70 p-5 rounded-2xl space-y-3 shadow-2xs">
+                  <h4 className="font-serif text-sm font-semibold text-warm-cocoa">
+                    O que você vai aprender:
                   </h4>
                   <ul className="space-y-2.5">
                     {course.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start space-x-2.5 text-sm text-warm-cocoa/80 font-light">
-                        <CheckCircle2 className="w-4 h-4 text-warm-terracotta flex-shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start space-x-2.5 text-xs sm:text-sm text-warm-cocoa/85 font-light leading-snug">
+                        <span className="w-4 h-4 rounded-full bg-warm-terracotta/10 text-warm-terracotta flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="w-2.5 h-2.5" />
+                        </span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -150,33 +145,27 @@ export default function CourseDetailModal({
                 </div>
               )}
 
-              {/* Guarantee banner */}
-              <div className="bg-warm-beige/40 border border-warm-beige rounded-xl p-4 flex items-center space-x-3 text-xs text-warm-cocoa/75">
-                <ShieldCheck className="w-5 h-5 text-warm-terracotta flex-shrink-0" />
-                <p>
-                  Pagamento seguro via <strong>Kiwify</strong> com acesso imediato após a confirmação da inscrição.
-                </p>
+              {/* Security info */}
+              <div className="flex items-center space-x-2.5 text-xs text-warm-cocoa/60 font-light pt-1">
+                <ShieldCheck className="w-4 h-4 text-warm-terracotta/80 flex-shrink-0" />
+                <span>Inscrição processada com total segurança através da plataforma Kiwify.</span>
               </div>
             </div>
 
-            {/* Modal Footer with Direct Checkout Button */}
-            <div className="p-4 sm:p-6 bg-white/90 border-t border-warm-beige flex flex-col sm:flex-row items-center justify-between gap-4 flex-shrink-0">
+            {/* Minimalist Action Footer */}
+            <div className="p-5 sm:p-6 bg-white border-t border-warm-beige/70 flex flex-col sm:flex-row items-center justify-between gap-3 flex-shrink-0">
               <div className="text-center sm:text-left">
-                <span className="text-[10px] font-mono uppercase text-warm-clay tracking-wider block">
-                  Plataforma Oficial Kiwify
-                </span>
-                <span className="text-xs text-warm-cocoa font-medium">
-                  Acesso 100% Garantido
-                </span>
+                <span className="text-xs text-warm-cocoa/60 font-light block">Status do curso</span>
+                <span className="text-sm font-medium text-emerald-700">Inscrições Abertas</span>
               </div>
 
               <a
                 href={course.checkoutUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-warm-terracotta hover:bg-warm-cocoa text-white font-semibold py-3.5 px-8 rounded-full transition-all duration-300 shadow-lg cursor-pointer text-sm"
+                className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-warm-terracotta hover:bg-warm-cocoa text-white font-medium py-3.5 px-7 rounded-full transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer text-sm"
               >
-                <span>Garantir Minha Vaga Agora</span>
+                <span>Garantir Vaga</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>
@@ -186,3 +175,4 @@ export default function CourseDetailModal({
     </AnimatePresence>
   );
 }
+
