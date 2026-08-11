@@ -174,20 +174,29 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     name: "Mariana Silva",
     role: "Paciente de Terapia Individual",
     text: "A Dra. Milena mudou completamente a forma como encaro meus relacionamentos. Sua abordagem integrativa me ajudou a sair de um ciclo de dependência emocional e a construir um casamento muito mais leve e seguro.",
-    rating: 5
+    rating: 5,
+    videoThumbnail: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1920&h=1080&auto=format&fit=crop",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    duration: "02:15"
   },
   {
     id: "t-2",
     name: "Carlos e Ana Beatriz",
     role: "Terapia de Casal",
     text: "Estávamos à beira do divórcio quando iniciamos as sessões. O olhar atento e a sensibilidade da Milena para nos ajudar a compreender nossas histórias individuais foram fundamentais para reconectarmos nossos laços.",
-    rating: 5
+    rating: 5,
+    videoThumbnail: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1920&h=1080&auto=format&fit=crop",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    duration: "03:40"
   },
   {
     id: "t-3",
     name: "Juliana Mendes",
-    role: "Aluna do Curso Crescimento Emocional",
+    role: "Aluna de Formação & Cursos",
     text: "Os cursos da Milena são de uma profundidade ímpar. Não é apenas teoria; ela entrega caminhos práticos e ferramentas que verdadeiramente transformam o nosso cotidiano e fortalecem nossa autoestima.",
-    rating: 5
+    rating: 5,
+    videoThumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1920&h=1080&auto=format&fit=crop",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    duration: "01:50"
   }
 ];

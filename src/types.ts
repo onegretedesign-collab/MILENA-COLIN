@@ -10,6 +10,9 @@ export interface Testimonial {
   text: string;
   avatarUrl?: string;
   rating?: number;
+  videoThumbnail?: string;
+  videoUrl?: string;
+  duration?: string;
 }
 
 export interface CourseItem {
