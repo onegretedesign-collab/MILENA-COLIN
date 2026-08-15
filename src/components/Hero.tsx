@@ -22,7 +22,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
         <img
           src={HERO_DATA.bannerImage}
           alt="Banner Dra. Milena Colin"
-          className="w-full h-full object-contain object-right sm:object-cover sm:object-right max-h-[580px] sm:max-h-[680px] lg:max-h-[760px] opacity-80 sm:opacity-95 lg:opacity-100 -translate-y-[8%] sm:-translate-y-[13%] transition-all duration-700"
+          className="w-full h-full object-contain object-right sm:object-cover sm:object-right max-h-[580px] sm:max-h-[680px] lg:max-h-[760px] opacity-80 sm:opacity-95 lg:opacity-100 translate-y-[2%] sm:-translate-y-[3%] transition-all duration-700"
           referrerPolicy="no-referrer"
         />
         {/* Soft edge blend gradients - seamless transparency fade to background */}
