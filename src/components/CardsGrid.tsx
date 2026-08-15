@@ -3,16 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { 
   BookOpen, 
   Instagram, 
   Target, 
-  MessageSquare, 
   Calendar, 
-  ChevronLeft, 
-  ChevronRight, 
   Sparkles,
   ArrowUpRight
 } from "lucide-react";
@@ -20,8 +16,7 @@ import {
   COURSES_DATA, 
   INSTAGRAM_DATA, 
   MISSION_DATA, 
-  APPOINTMENT_CTA_DATA, 
-  TESTIMONIALS_DATA 
+  APPOINTMENT_CTA_DATA 
 } from "../data/landingData";
 
 interface CardsGridProps {
@@ -29,16 +24,6 @@ interface CardsGridProps {
 }
 
 export default function CardsGrid({ onOpenContact }: CardsGridProps) {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
-  const nextTestimonial = () => {
-    setActiveTestimonial((prev) => (prev + 1) % TESTIMONIALS_DATA.length);
-  };
-
-  const prevTestimonial = () => {
-    setActiveTestimonial((prev) => (prev - 1 + TESTIMONIALS_DATA.length) % TESTIMONIALS_DATA.length);
-  };
-
   return (
     <section id="bento-grid" className="py-24 bg-warm-sand/50 relative">
       <div className="max-w-7xl mx-auto px-6">
@@ -52,8 +37,8 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
           <div className="h-[1px] w-24 bg-warm-clay mx-auto" />
         </div>
 
-        {/* Bento Grid Layout - Highly modern, sophisticated and asymmetric */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Bento Grid Layout - Clean 4-card symmetrical grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* CARD 1: Meus Cursos */}
           <motion.div
@@ -129,7 +114,7 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
           <motion.div
             whileHover={{ y: -6 }}
             transition={{ duration: 0.3 }}
-            className="bg-[#FBF9F6] border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group md:col-span-2 lg:col-span-1"
+            className="bg-[#FBF9F6] border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group"
           >
             <div className="space-y-6 z-10">
               <div className="w-12 h-12 rounded-2xl bg-warm-accent/10 border border-warm-accent/20 flex items-center justify-center text-warm-accent">
@@ -151,86 +136,11 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
             </div>
           </motion.div>
 
-          {/* CARD 4: Depoimentos Reais - Asymmetric grid element span */}
-          <div className="bg-[#E6DCD2]/50 border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm md:col-span-2 relative overflow-hidden">
-            <div className="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-warm-clay/10 blur-xl" />
-            
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-full bg-warm-terracotta/10 flex items-center justify-center text-warm-terracotta">
-                  <MessageSquare className="w-4 h-4" />
-                </div>
-                <h3 className="font-serif text-2xl font-light text-warm-cocoa uppercase tracking-tight">
-                  Depoimentos <span className="font-semibold italic text-warm-terracotta">reais</span>
-                </h3>
-              </div>
-              
-              <div className="flex space-x-2">
-                <button
-                  onClick={prevTestimonial}
-                  className="w-8 h-8 rounded-full border border-warm-clay/30 hover:border-warm-terracotta text-warm-cocoa flex items-center justify-center transition-colors cursor-pointer"
-                  aria-label="Previous Testimonial"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={nextTestimonial}
-                  className="w-8 h-8 rounded-full border border-warm-clay/30 hover:border-warm-terracotta text-warm-cocoa flex items-center justify-center transition-colors cursor-pointer"
-                  aria-label="Next Testimonial"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
-            {/* Testimonials Body with AnimatePresence */}
-            <div className="relative flex-grow flex items-center my-4 overflow-hidden min-h-[160px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTestimonial}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="space-y-4 w-full"
-                >
-                  <p className="font-serif text-base sm:text-lg text-warm-cocoa/90 italic leading-relaxed font-light">
-                    "{TESTIMONIALS_DATA[activeTestimonial].text}"
-                  </p>
-                  <div>
-                    <h4 className="font-semibold text-sm text-warm-cocoa">
-                      {TESTIMONIALS_DATA[activeTestimonial].name}
-                    </h4>
-                    {TESTIMONIALS_DATA[activeTestimonial].role && (
-                      <p className="text-xs font-mono text-warm-accent uppercase mt-0.5">
-                        {TESTIMONIALS_DATA[activeTestimonial].role}
-                      </p>
-                    )}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Pagination Indicators */}
-            <div className="flex space-x-2 pt-4">
-              {TESTIMONIALS_DATA.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTestimonial(index)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    index === activeTestimonial ? "w-8 bg-warm-terracotta" : "w-1.5 bg-warm-clay/40"
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* CARD 5: Agende seu Horário */}
+          {/* CARD 4: Agende seu Horário */}
           <motion.div
             whileHover={{ y: -6 }}
             transition={{ duration: 0.3 }}
-            className="bg-[#FDFBF9] text-warm-cocoa border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group md:col-span-2 lg:col-span-1"
+            className="bg-[#FDFBF9] text-warm-cocoa border border-warm-beige rounded-[32px] p-6 sm:p-8 flex flex-col justify-between h-[420px] shadow-sm relative overflow-hidden group"
           >
             {/* Elegant luxury visual style */}
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-warm-terracotta/10 to-transparent rounded-bl-[100px]" />
@@ -257,7 +167,7 @@ export default function CardsGrid({ onOpenContact }: CardsGridProps) {
                 onClick={onOpenContact}
                 className="w-full bg-warm-terracotta hover:bg-warm-cocoa hover:text-white text-white font-medium py-3 px-5 rounded-full text-sm transition-all duration-300 shadow-md cursor-pointer text-center"
               >
-                Agendar Consulta Online / Presencial
+                Agendar Consulta
               </button>
             </div>
           </motion.div>

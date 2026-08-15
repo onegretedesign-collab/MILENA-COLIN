@@ -10,7 +10,8 @@ export const HERO_DATA = {
   greeting: "Olá, sou",
   name: "Milena Colin",
   title: "Psicóloga Integrativa",
-  description: "Psicóloga Integrativa que há mais de 20 anos transforma vidas, ajudando pessoas a saírem do caos nos relacionamentos e a construírem vínculos mais leves, saudáveis e seguros."
+  description: "Psicóloga Integrativa que há mais de 20 anos transforma vidas, ajudando pessoas a saírem do caos nos relacionamentos e a construírem vínculos mais leves, saudáveis e seguros.",
+  bannerImage: "https://i.postimg.cc/CKR7jKFQ/banner-site.png"
 };
 
 export const COURSES_DATA = {
@@ -171,12 +172,12 @@ export const STATS_DATA: Stat[] = [
 export const TESTIMONIALS_DATA: Testimonial[] = [
   {
     id: "t-1",
-    name: "Mariana Silva",
-    role: "Paciente de Terapia Individual",
-    text: "A Dra. Milena mudou completamente a forma como encaro meus relacionamentos. Sua abordagem integrativa me ajudou a sair de um ciclo de dependência emocional e a construir um casamento muito mais leve e seguro.",
+    name: "Dalila Garcia",
+    role: "Psicoterapia Integrativa & Vínculos",
+    text: "O atendimento da Dra. Milena foi um divisor de águas. Com sua sensibilidade e precisão clínica, aprendi a desatar nós emocionais profundos, resgatar minha autoconfiança e vivenciar relações autênticas e em paz.",
     rating: 5,
-    videoThumbnail: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1920&h=1080&auto=format&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoThumbnail: "https://img.youtube.com/vi/wlwysuh5bM4/hqdefault.jpg",
+    videoUrl: "https://youtu.be/wlwysuh5bM4",
     duration: "02:15"
   },
   {

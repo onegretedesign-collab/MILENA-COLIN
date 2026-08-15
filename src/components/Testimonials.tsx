@@ -231,7 +231,7 @@ export default function Testimonials() {
 
               {/* Video Player Box (16:9 ratio 1920x1080) */}
               <div className="relative w-full aspect-[16/9] bg-black">
-                {selectedVideo.videoUrl && (selectedVideo.videoUrl.includes("youtube") || selectedVideo.videoUrl.includes("vimeo")) ? (
+                {selectedVideo.videoUrl && (selectedVideo.videoUrl.includes("youtu") || selectedVideo.videoUrl.includes("vimeo")) ? (
                   <iframe
                     src={getEmbedUrl(selectedVideo.videoUrl)}
                     title={`Depoimento de ${selectedVideo.name}`}

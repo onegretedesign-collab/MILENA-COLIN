@@ -4,7 +4,7 @@
  */
 
 import { motion } from "motion/react";
-import { ArrowRight, Star, Award, Heart, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { HERO_DATA } from "../data/landingData";
 
 interface HeroProps {
@@ -15,24 +15,33 @@ export default function Hero({ onOpenContact }: HeroProps) {
   return (
     <section 
       id="inicio" 
-      className="relative min-h-screen pt-28 pb-16 md:py-36 bg-warm-sand text-warm-cocoa flex items-center overflow-hidden"
+      className="relative min-h-[78vh] lg:min-h-[84vh] pt-24 pb-8 md:pt-32 md:pb-12 bg-[#FAF7F3] text-warm-cocoa flex items-center overflow-hidden"
     >
-      {/* Decorative elegant background glow elements */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 rounded-full bg-warm-terracotta/8 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] rounded-full bg-warm-clay/8 blur-3xl pointer-events-none" />
-      
-      {/* Fine-line architectural grids for a sophisticated look */}
-      <div className="absolute inset-0 bg-[radial-gradient(#00000003_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
+      {/* Background Banner Image - naturally proportioned with bottom transparency blend */}
+      <div className="absolute right-0 bottom-0 top-0 w-full md:w-[65%] lg:w-[58%] xl:w-[54%] pointer-events-none select-none overflow-hidden flex items-center justify-end z-0">
+        <img
+          src={HERO_DATA.bannerImage}
+          alt="Banner Dra. Milena Colin"
+          className="w-full h-full object-contain object-right sm:object-cover sm:object-right max-h-[580px] sm:max-h-[680px] lg:max-h-[760px] opacity-80 sm:opacity-95 lg:opacity-100 -translate-y-[8%] sm:-translate-y-[13%] transition-all duration-700"
+          referrerPolicy="no-referrer"
+        />
+        {/* Soft edge blend gradients - seamless transparency fade to background */}
+        <div className="absolute inset-y-0 left-0 w-32 md:w-56 bg-gradient-to-r from-[#FAF7F3] via-[#FAF7F3]/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#FAF7F3] via-[#FAF7F3]/85 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#FAF7F3]/80 to-transparent pointer-events-none" />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        
-        {/* Left Side: Content */}
-        <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-8 order-2 lg:order-1">
+      {/* Decorative subtle atmospheric glow */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 rounded-full bg-warm-terracotta/5 blur-3xl pointer-events-none" />
+      
+      {/* Content Container - Aligned to the Left */}
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
+        <div className="max-w-xl lg:max-w-2xl flex flex-col justify-center text-left space-y-6 md:space-y-7 py-2 sm:py-4 -translate-y-[10%] md:-translate-y-[11%]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center space-x-2 bg-warm-terracotta/10 border border-warm-terracotta/20 px-4 py-2 rounded-full w-fit"
+            className="inline-flex items-center space-x-2 bg-warm-terracotta/10 border border-warm-terracotta/20 px-4 py-2 rounded-full w-fit backdrop-blur-xs"
           >
             <span className="w-2 h-2 rounded-full bg-warm-gold animate-pulse" />
             <span className="font-mono text-xs tracking-widest text-warm-terracotta uppercase">
@@ -44,7 +53,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="space-y-4"
+            className="space-y-3"
           >
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight text-warm-cocoa tracking-tight">
               {HERO_DATA.greeting}{" "}
@@ -62,16 +71,37 @@ export default function Hero({ onOpenContact }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-sans text-base sm:text-lg md:text-xl text-warm-cocoa/80 font-light leading-relaxed max-w-xl"
+            className="font-sans text-base sm:text-lg md:text-xl text-warm-cocoa/90 font-light leading-relaxed max-w-xl drop-shadow-2xs"
           >
             {HERO_DATA.description}
           </motion.p>
+
+          {/* Core Trust Badges - positioned directly below description and above CTA buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="grid grid-cols-3 gap-3 sm:gap-4 py-3 sm:py-4 border-y border-warm-clay/15 max-w-lg"
+          >
+            <div className="flex flex-col">
+              <span className="text-xl sm:text-2xl font-serif text-warm-gold font-bold">+20 Anos</span>
+              <span className="text-xs text-warm-cocoa/75 font-medium">Experiência Clínica</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl sm:text-2xl font-serif text-warm-gold font-bold">+18k</span>
+              <span className="text-xs text-warm-cocoa/75 font-medium">Vidas Transformadas</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl sm:text-2xl font-serif text-warm-gold font-bold">100%</span>
+              <span className="text-xs text-warm-cocoa/75 font-medium">Foco Integrativo</span>
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 pt-4"
+            className="flex flex-col sm:flex-row gap-4 pt-1"
           >
             <button
               onClick={onOpenContact}
@@ -82,79 +112,12 @@ export default function Hero({ onOpenContact }: HeroProps) {
             </button>
             <a
               href="#cursos"
-              className="flex items-center justify-center border border-warm-clay/50 hover:border-warm-cocoa text-warm-clay hover:text-warm-cocoa px-8 py-4 rounded-full text-base font-medium transition-all duration-300"
+              className="flex items-center justify-center border border-warm-clay/50 hover:border-warm-cocoa bg-white/60 hover:bg-white text-warm-clay hover:text-warm-cocoa px-8 py-4 rounded-full text-base font-medium transition-all duration-300 backdrop-blur-xs"
             >
               Conhecer Cursos
             </a>
           </motion.div>
-
-          {/* Core Trust Badges */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="grid grid-cols-3 gap-4 pt-8 border-t border-warm-clay/20 max-w-md"
-          >
-            <div className="flex flex-col">
-              <span className="text-2xl font-serif text-warm-gold font-bold">+20 Anos</span>
-              <span className="text-xs text-warm-cocoa/60">Experiência Clínica</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-serif text-warm-gold font-bold">+18k</span>
-              <span className="text-xs text-warm-cocoa/60">Vidas Transformadas</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-serif text-warm-gold font-bold">100%</span>
-              <span className="text-xs text-warm-cocoa/60">Foco Integrativo</span>
-            </div>
-          </motion.div>
         </div>
-
-        {/* Right Side: Image with sophisticated arch/frame design */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end items-center order-1 lg:order-2">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, rotate: 1 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative w-full max-w-[380px] sm:max-w-[420px] aspect-[3/4]"
-          >
-            {/* Elegant Background Card Shadow/Layer */}
-            <div className="absolute -inset-2 bg-warm-terracotta/10 rounded-[40px] blur-xl pointer-events-none" />
-            
-            {/* Elegant Gold/Clay Accent Border frame */}
-            <div className="absolute inset-2 -right-2 -bottom-2 border-2 border-warm-clay/30 rounded-[36px] pointer-events-none" />
-
-            {/* Arched image frame */}
-            <div className="w-full h-full rounded-[36px] overflow-hidden border border-warm-clay/20 shadow-2xl relative bg-warm-beige/20">
-              <img
-                src="https://i.postimg.cc/jjMG1JMk/IMG-3298.png"
-                alt="Dra. Milena Colin - Psicóloga Integrativa"
-                className="w-full h-full object-cover object-top scale-[1.10] -translate-y-[10%] hover:scale-[1.15] transition-transform duration-700 ease-out"
-                referrerPolicy="no-referrer"
-              />
-              
-              {/* Elegant light fade at the bottom to blend the image edge seamlessly */}
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-warm-sand via-warm-sand/30 to-transparent pointer-events-none" />
-              
-              {/* Subtle glassmorphic tag on bottom of image */}
-              <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 bg-white/85 backdrop-blur-md border border-warm-beige/60 rounded-2xl p-3 sm:p-4 flex items-center justify-between z-10 animate-fade-in">
-                <div className="min-w-0 flex-1 pr-2">
-                  <h4 className="font-serif text-xs sm:text-sm font-semibold text-warm-cocoa truncate">Dra. Milena Colin</h4>
-                  <p className="text-[8px] sm:text-[10px] font-mono text-warm-clay uppercase tracking-wider truncate">CRP Ativo • Especialista Integrativa</p>
-                </div>
-                <div className="flex -space-x-1.5 flex-shrink-0">
-                  <div className="w-6 h-6 sm:w-7 h-7 rounded-full bg-warm-terracotta flex items-center justify-center border border-white">
-                    <Heart className="w-3 h-3 sm:w-3.5 h-3.5 text-white" />
-                  </div>
-                  <div className="w-6 h-6 sm:w-7 h-7 rounded-full bg-warm-gold flex items-center justify-center border border-white">
-                    <Award className="w-3 h-3 sm:w-3.5 h-3.5 text-warm-terracotta" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
       </div>
     </section>
   );

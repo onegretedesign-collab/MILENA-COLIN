@@ -80,7 +80,7 @@ export default function CoursesSalesSection() {
   };
 
   return (
-    <section id="cursos" className="py-20 sm:py-28 bg-[#FAF7F3] relative overflow-hidden">
+    <section id="cursos" className="pt-10 sm:pt-14 pb-20 sm:pb-28 bg-[#FAF7F3] relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-warm-terracotta/5 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-warm-clay/5 blur-3xl pointer-events-none" />
