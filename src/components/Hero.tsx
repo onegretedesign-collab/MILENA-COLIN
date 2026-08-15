@@ -36,19 +36,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
       
       {/* Content Container - Aligned to the Left */}
       <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-        <div className="max-w-xl lg:max-w-2xl flex flex-col justify-center text-left space-y-6 md:space-y-7 py-2 sm:py-4 -translate-y-[10%] md:-translate-y-[11%]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center space-x-2 bg-warm-terracotta/10 border border-warm-terracotta/20 px-4 py-2 rounded-full w-fit backdrop-blur-xs"
-          >
-            <span className="w-2 h-2 rounded-full bg-warm-gold animate-pulse" />
-            <span className="font-mono text-xs tracking-widest text-warm-terracotta uppercase">
-              {HERO_DATA.welcome}
-            </span>
-          </motion.div>
-
+        <div className="max-w-xl lg:max-w-2xl flex flex-col justify-center text-left space-y-6 md:space-y-7 py-2 sm:py-4 translate-y-[5%] md:translate-y-[4%]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
