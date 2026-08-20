@@ -69,7 +69,7 @@ export default function Testimonials() {
           </motion.p>
         </div>
 
-        {/* Testimonials Grid: 1. Video (1920x1080 16:9) -> 2. Texto -> 3. Botão Assistir */}
+        {/* Testimonials Grid: Videos em formato 16:9 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TESTIMONIALS_DATA.map((testimonial, index) => (
             <motion.div
@@ -81,14 +81,14 @@ export default function Testimonials() {
               whileHover={{ y: -6 }}
               className="bg-white border border-warm-beige rounded-[28px] overflow-hidden shadow-sm hover:shadow-md flex flex-col justify-between group transition-all duration-300"
             >
-              {/* 1º: VÍDEO (FORMATO 1920x1080 / 16:9 ASPECT RATIO) NO TOPO */}
+              {/* 1º: VÍDEO (FORMATO 1920x1080 / 16:9 ASPECT RATIO) */}
               <div 
                 onClick={() => setSelectedVideo(testimonial)}
                 className="relative w-full aspect-[16/9] bg-warm-cocoa/10 overflow-hidden cursor-pointer group/thumb"
               >
                 <img
                   src={testimonial.videoThumbnail || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1920&h=1080&auto=format&fit=crop"}
-                  alt={`Prévia do depoimento de ${testimonial.name}`}
+                  alt={`Depoimento de ${testimonial.name}`}
                   className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
@@ -116,44 +116,8 @@ export default function Testimonials() {
                 </div>
               </div>
 
-              {/* 2º: TEXTO DO DEPOIMENTO */}
-              <div className="p-6 sm:p-7 space-y-4 flex-grow flex flex-col justify-between">
-                <div className="space-y-3">
-                  {/* Rating Stars */}
-                  <div className="flex space-x-1">
-                    {[...Array(testimonial.rating || 5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-warm-gold text-warm-gold" />
-                    ))}
-                  </div>
-
-                  {/* Quote text */}
-                  <p className="font-serif text-sm sm:text-base text-warm-cocoa/90 font-light italic leading-relaxed">
-                    "{testimonial.text}"
-                  </p>
-                </div>
-
-                {/* Author Info */}
-                <div className="pt-4 border-t border-warm-beige/60 flex items-center space-x-3">
-                  <div className="w-9 h-9 rounded-full bg-warm-sand/80 border border-warm-beige flex items-center justify-center flex-shrink-0">
-                    <span className="font-mono text-xs font-bold text-warm-terracotta">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="font-sans font-semibold text-sm text-warm-cocoa">
-                      {testimonial.name}
-                    </h4>
-                    {testimonial.role && (
-                      <p className="text-[11px] font-mono text-warm-accent uppercase tracking-wider">
-                        {testimonial.role}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* 3º: BOTÃO DE ASSISTIR DEPOIMENTO */}
-              <div className="px-6 pb-6 pt-0">
+              {/* BOTÃO DE ASSISTIR DEPOIMENTO */}
+              <div className="p-4 sm:p-5">
                 <button
                   onClick={() => setSelectedVideo(testimonial)}
                   className="w-full flex items-center justify-center space-x-2 bg-warm-sand/80 hover:bg-warm-terracotta text-warm-cocoa hover:text-white font-medium py-3 px-4 rounded-full text-xs sm:text-sm transition-all duration-300 border border-warm-beige hover:border-warm-terracotta cursor-pointer group/btn"

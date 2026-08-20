@@ -183,21 +183,21 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
   {
     id: "t-2",
     name: "Carlos e Ana Beatriz",
-    role: "Terapia de Casal",
+    role: "Terapia de Casal & Reconexão",
     text: "Estávamos à beira do divórcio quando iniciamos as sessões. O olhar atento e a sensibilidade da Milena para nos ajudar a compreender nossas histórias individuais foram fundamentais para reconectarmos nossos laços.",
     rating: 5,
-    videoThumbnail: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1920&h=1080&auto=format&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoThumbnail: "https://img.youtube.com/vi/s2O49_5O_LU/hqdefault.jpg",
+    videoUrl: "https://youtu.be/s2O49_5O_LU",
     duration: "03:40"
   },
   {
     id: "t-3",
     name: "Juliana Mendes",
     role: "Aluna de Formação & Cursos",
-    text: "Os cursos da Milena são de uma profundidade ímpar. Não é apenas teoria; ela entrega caminhos práticos e ferramentas que verdadeiramente transformam o nosso cotidiano e fortalecem nossa autoestima.",
+    text: "Os cursos e imersões da Milena são de uma profundidade ímpar. Não é apenas teoria; ela entrega caminhos práticos e ferramentas que verdadeiramente transformam o nosso cotidiano e fortalecem nossa autoestima.",
     rating: 5,
-    videoThumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1920&h=1080&auto=format&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoThumbnail: "https://img.youtube.com/vi/mBRDXKmAF3k/hqdefault.jpg",
+    videoUrl: "https://youtu.be/mBRDXKmAF3k",
     duration: "01:50"
   }
 ];
