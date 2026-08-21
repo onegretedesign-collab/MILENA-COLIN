@@ -70,7 +70,7 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials Grid: Videos em formato 16:9 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {TESTIMONIALS_DATA.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -103,13 +103,18 @@ export default function Testimonials() {
                   </div>
                 </div>
 
-                {/* 1920x1080 HD Badge & Duration */}
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-white/90 pointer-events-none">
-                  <span className="bg-black/60 backdrop-blur-xs px-2.5 py-0.5 rounded-full uppercase tracking-wider font-semibold">
-                    1920x1080 HD
-                  </span>
+                {/* 1920x1080 HD Badge, Name Tag & Duration */}
+                <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between text-[11px] font-mono text-white/90 pointer-events-none">
+                  <div className="flex flex-col items-start gap-1.5">
+                    <span className="bg-black/60 backdrop-blur-xs px-2.5 py-0.5 rounded-full uppercase tracking-wider font-semibold text-[10px]">
+                      1920x1080 HD
+                    </span>
+                    <span className="bg-black/80 backdrop-blur-xs px-2.5 py-1 rounded-md font-sans text-xs font-semibold text-white tracking-wide shadow-md border border-white/10">
+                      {testimonial.name}
+                    </span>
+                  </div>
                   {testimonial.duration && (
-                    <span className="bg-black/60 backdrop-blur-xs px-2.5 py-0.5 rounded-full font-mono">
+                    <span className="bg-black/60 backdrop-blur-xs px-2.5 py-0.5 rounded-full font-mono text-[10px]">
                       {testimonial.duration}
                     </span>
                   )}
