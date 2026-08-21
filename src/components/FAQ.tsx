@@ -23,7 +23,7 @@ const FAQ_DATA: FAQItem[] = [
   },
   {
     question: "Qual é a duração e frequência das sessões?",
-    answer: "As sessões individuais e de casal têm duração média de 50 minutos a 1 hora. A frequência recomendada para o início do processo é semanal, permitindo estabelecer um vínculo terapêutico seguro e dar continuidade consistente ao trabalho de transformação das dores e fortalecimento das relações."
+    answer: "As sessões individuais e de casal têm duração média de 50 minutos a 1 hora e são realizadas de forma quinzenal (a cada 15 dias). Esse intervalo quinzenal é planejado para que você tenha tempo de assimilar as reflexões, praticar os exercícios no seu cotidiano e vivenciar uma evolução consistente e profunda no seu processo terapêutico."
   },
   {
     question: "Como funciona a abordagem de Milena Colin para terapia de trauma?",
