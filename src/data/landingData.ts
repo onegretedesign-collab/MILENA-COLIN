@@ -199,5 +199,15 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     videoThumbnail: "https://img.youtube.com/vi/mBRDXKmAF3k/hqdefault.jpg",
     videoUrl: "https://youtu.be/mBRDXKmAF3k",
     duration: "01:50"
+  },
+  {
+    id: "t-4",
+    name: "Depoimento de Paciente",
+    role: "Psicoterapia & Desenvolvimento Pessoal",
+    text: "Experiência transformadora no cuidado das emoções e fortalecimento das relações interpessoais.",
+    rating: 5,
+    videoThumbnail: "https://img.youtube.com/vi/_F9L5mOEpCA/hqdefault.jpg",
+    videoUrl: "https://youtu.be/_F9L5mOEpCA",
+    duration: "02:30"
   }
 ];
