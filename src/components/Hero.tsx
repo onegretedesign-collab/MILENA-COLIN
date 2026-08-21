@@ -57,20 +57,19 @@ export default function Hero({ onOpenContact }: HeroProps) {
             </h2>
           </motion.div>
 
-          {/* Dedicated Mobile Image Showcase - Elegantly framed and positioned so text NEVER overlaps the portrait */}
+          {/* Mobile Image - Displayed cleanly without card container, preserving position and high resolution */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="md:hidden w-full my-1 rounded-3xl overflow-hidden shadow-md border border-warm-beige/80 bg-gradient-to-b from-white to-warm-sand/40 relative group"
+            className="md:hidden w-full my-2 flex justify-center items-center"
           >
             <img
               src={HERO_DATA.bannerImage}
               alt="Dra. Milena Colin"
-              className="w-full h-auto max-h-[300px] xs:max-h-[350px] sm:max-h-[400px] object-cover object-right"
+              className="w-full max-w-sm sm:max-w-md h-auto object-contain max-h-[380px]"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F3] via-transparent to-transparent opacity-25 pointer-events-none" />
           </motion.div>
 
           {/* Description */}
