@@ -5,7 +5,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Star, Play, X, Heart, Video } from "lucide-react";
+import { Play, X, Heart } from "lucide-react";
 import { TESTIMONIALS_DATA } from "../data/landingData";
 import { Testimonial } from "../types";
 
@@ -69,70 +69,48 @@ export default function Testimonials() {
           </motion.p>
         </div>
 
-        {/* Testimonials Grid: Videos em formato 16:9 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Testimonials Grid: Imagens estáticas em proporção 16:9 sem botão de play ou reprodução */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {TESTIMONIALS_DATA.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              transition={{ duration: 0.6, delay: index * 0.12 }}
               whileHover={{ y: -6 }}
-              className="bg-white border border-warm-beige rounded-[28px] overflow-hidden shadow-sm hover:shadow-md flex flex-col justify-between group transition-all duration-300"
+              onClick={() => setSelectedVideo(testimonial)}
+              className="bg-white border border-warm-beige rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col"
             >
-              {/* 1º: VÍDEO (FORMATO 1920x1080 / 16:9 ASPECT RATIO) */}
-              <div 
-                onClick={() => setSelectedVideo(testimonial)}
-                className="relative w-full aspect-[16/9] bg-warm-cocoa/10 overflow-hidden cursor-pointer group/thumb"
-              >
+              {/* IMAGEM ESTÁTICA EM ALTA DEFINIÇÃO (FORMATO 16:9) LIMPA, SEM BOTÃO DE REPRODUÇÃO */}
+              <div className="relative w-full aspect-[16/9] bg-warm-cocoa/10 overflow-hidden">
                 <img
                   src={testimonial.videoThumbnail || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1920&h=1080&auto=format&fit=crop"}
                   alt={`Depoimento de ${testimonial.name}`}
-                  className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
 
-                {/* Dark Overlay for contrast */}
-                <div className="absolute inset-0 bg-black/25 group-hover/thumb:bg-black/40 transition-colors duration-300" />
+                {/* Gradiente suave apenas na base para garantir leitura da identificação */}
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none" />
 
-                {/* Central Animated Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/90 backdrop-blur-md text-warm-terracotta flex items-center justify-center shadow-lg group-hover/thumb:scale-110 group-hover/thumb:bg-warm-terracotta group-hover/thumb:text-white transition-all duration-300">
-                    <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-current ml-1" />
-                  </div>
-                </div>
-
-                {/* 1920x1080 HD Badge, Name Tag & Duration */}
-                <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between text-[11px] font-mono text-white/90 pointer-events-none">
-                  <div className="flex flex-col items-start gap-1.5">
-                    <span className="bg-black/60 backdrop-blur-xs px-2.5 py-0.5 rounded-full uppercase tracking-wider font-semibold text-[10px]">
+                {/* Etiqueta de identificação com Nome e Selo HD */}
+                <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between text-[11px] font-mono text-white/95 pointer-events-none">
+                  <div className="flex flex-col items-start gap-1">
+                    <span className="bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold text-[9px] text-white/80">
                       1920x1080 HD
                     </span>
-                    <span className="bg-black/80 backdrop-blur-xs px-2.5 py-1 rounded-md font-sans text-xs font-semibold text-white tracking-wide shadow-md border border-white/10">
+                    <span className="bg-black/85 backdrop-blur-sm px-2.5 py-1 rounded-md font-sans text-xs font-semibold text-white tracking-wide shadow-md border border-white/10">
                       {testimonial.name}
                     </span>
                   </div>
                   {testimonial.duration && (
-                    <span className="bg-black/60 backdrop-blur-xs px-2.5 py-0.5 rounded-full font-mono text-[10px]">
+                    <span className="bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded-full font-mono text-[10px] text-white/80">
                       {testimonial.duration}
                     </span>
                   )}
                 </div>
               </div>
-
-              {/* BOTÃO DE ASSISTIR DEPOIMENTO */}
-              <div className="p-4 sm:p-5">
-                <button
-                  onClick={() => setSelectedVideo(testimonial)}
-                  className="w-full flex items-center justify-center space-x-2 bg-warm-sand/80 hover:bg-warm-terracotta text-warm-cocoa hover:text-white font-medium py-3 px-4 rounded-full text-xs sm:text-sm transition-all duration-300 border border-warm-beige hover:border-warm-terracotta cursor-pointer group/btn"
-                >
-                  <Video className="w-4 h-4 text-warm-terracotta group-hover/btn:text-white transition-colors" />
-                  <span>Assistir Depoimento</span>
-                  <Play className="w-3.5 h-3.5 fill-current opacity-70 ml-1" />
-                </button>
-              </div>
-
             </motion.div>
           ))}
         </div>

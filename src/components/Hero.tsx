@@ -36,7 +36,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
       
       {/* Content Container - Aligned to the Left */}
       <div className="max-w-7xl mx-auto px-5 sm:px-6 w-full relative z-10">
-        <div className="max-w-xl lg:max-w-2xl flex flex-col justify-center text-left space-y-5 sm:space-y-6 md:space-y-7 py-2 sm:py-4 md:translate-y-[4%]">
+        <div className="max-w-xl lg:max-w-2xl flex flex-col justify-center text-left space-y-5 sm:space-y-6 md:space-y-7 py-2 sm:py-4 -translate-y-[5%]">
           
           {/* Main Title & Profession */}
           <motion.div
