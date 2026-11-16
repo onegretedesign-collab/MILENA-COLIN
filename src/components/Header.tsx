@@ -59,14 +59,15 @@ export default function Header({ onOpenContact }: HeaderProps) {
         <a 
           href="#inicio" 
           onClick={(e) => handleScroll(e, "#inicio")}
-          className="flex flex-col items-start group"
+          className="flex items-center group cursor-pointer focus:outline-none"
+          aria-label="Milena Colin - Psicóloga Integrativa - Voltar ao início"
         >
-          <span className="font-serif text-lg tracking-widest text-warm-terracotta font-semibold uppercase group-hover:text-warm-cocoa transition-colors">
-            MILENA COLIN
-          </span>
-          <span className="font-mono text-[10px] tracking-wider text-warm-clay uppercase">
-            Psicologia Integrativa
-          </span>
+          <img
+            src="https://i.postimg.cc/8P17Lx6w/LOGO-MILENA-COLIN-PSICOLOGA-INTEGRATIVA-HORIZONTAL-01.png"
+            alt="Milena Colin - Psicóloga Integrativa"
+            className="h-[34px] sm:h-[38px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
+            referrerPolicy="no-referrer"
+          />
         </a>
 
         {/* Center: Desktop Navigation */}
@@ -128,14 +129,19 @@ export default function Header({ onOpenContact }: HeaderProps) {
             >
               {/* Header inside drawer */}
               <div className="p-6 flex items-center justify-between border-b border-warm-beige/60">
-                <div className="flex flex-col items-start">
-                  <span className="font-serif text-base tracking-widest text-warm-terracotta font-semibold uppercase">
-                    MILENA COLIN
-                  </span>
-                  <span className="font-mono text-[9px] tracking-wider text-warm-clay uppercase">
-                    Psicologia Integrativa
-                  </span>
-                </div>
+                <a
+                  href="#inicio"
+                  onClick={(e) => handleScroll(e, "#inicio")}
+                  className="flex items-center cursor-pointer"
+                  aria-label="Milena Colin - Psicóloga Integrativa"
+                >
+                  <img
+                    src="https://i.postimg.cc/8P17Lx6w/LOGO-MILENA-COLIN-PSICOLOGA-INTEGRATIVA-HORIZONTAL-01.png"
+                    alt="Milena Colin - Psicóloga Integrativa"
+                    className="h-8 w-auto object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                </a>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="text-warm-cocoa hover:text-warm-terracotta p-1.5 transition-colors focus:outline-none cursor-pointer"
