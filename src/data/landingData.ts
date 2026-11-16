@@ -60,7 +60,7 @@ export const COURSES_LIST: CourseItem[] = [
     title: "Família: Do Caos à Ordem",
     category: "Relações Familiares",
     image: "https://i.postimg.cc/cJH7Kt1y/CURSO-FAMILIA-DO-CAOS-A-ORDEM.jpg",
-    checkoutUrl: "https://pay.kiwify.com.br/gRINxNk",
+    checkoutUrl: "https://pay.kiwify.com.br/f4CIxgQ",
     badge: "Destaque",
     price: "Inscrição Aberta",
     description: "Ferramentas sistêmicas para identificar dinâmicas disfuncionais, curar feridas familiares e restabelecer a harmonia e o respeito no lar.",
@@ -105,6 +105,108 @@ export const COURSES_LIST: CourseItem[] = [
       "Cancelamento simples sem fidelidade"
     ],
     initialLikes: 175
+  },
+  {
+    id: "curso-conquistando-ano-prospero-especial",
+    title: "Conquistando um Ano Próspero",
+    category: "Prosperidade & Propósito",
+    image: "https://i.postimg.cc/BbTVTXRP/CONQUISTANDO-UM-ANO-PROSPERO.jpg",
+    checkoutUrl: "https://pay.kiwify.com.br/mrsIKN2",
+    badge: "Edição Especial",
+    price: "Inscrição Aberta",
+    description: "Alinhe suas emoções, crenças e decisões práticas para viver um novo ciclo com clareza, equilíbrio e prosperidade genuína.",
+    features: [
+      "Desbloqueio de padrões emocionais ligados à escassez",
+      "Construção de metas alinhadas aos seus valores",
+      "Fortalecimento da postura adulta e da autoconfiança",
+      "Acesso imediato pela plataforma Kiwify"
+    ],
+    initialLikes: 164
+  },
+  {
+    id: "curso-familia-caos-ordem-imersao",
+    title: "Família: Do Caos à Ordem",
+    category: "Relações Familiares",
+    image: "https://i.postimg.cc/Rh7D7N2t/FAMILIA-DO-CAOS-A-ORDEM.jpg",
+    checkoutUrl: "https://pay.kiwify.com.br/j3LOUSo",
+    badge: "Mais Procurado",
+    price: "Inscrição Aberta",
+    description: "Um caminho prático e acolhedor para restaurar o diálogo, a paz e o respeito dentro do ambiente familiar.",
+    features: [
+      "Compreensão dos papéis e limites saudáveis no lar",
+      "Estratégias para transformar conflitos em conexão",
+      "Cura de feridas afetivas e repetição de padrões",
+      "Aulas práticas com aplicação imediata no dia a dia"
+    ],
+    initialLikes: 218
+  },
+  {
+    id: "curso-familia-caos-ordem-completo",
+    title: "Família: Do Caos à Ordem — Curso Completo",
+    category: "Formação Completa",
+    image: "https://i.postimg.cc/1XGjGfbN/FAMILIA-DO-CAOS-A-ORDEM-CURSO-COMPLETO.jpg",
+    checkoutUrl: "https://pay.kiwify.com.br/f4CIxgQ",
+    badge: "Curso Completo",
+    price: "Inscrição Aberta",
+    description: "A formação completa com aprofundamento sistêmico e integrativo para reestruturar vínculos conjugais, parentais e familiares.",
+    features: [
+      "Módulos completos sobre dinâmica familiar e ordens do amor",
+      "Aprofundamento na relação entre pais, filhos e casal",
+      "Exercícios terapêuticos guiados para pacificação do lar",
+      "Material de apoio e acesso integral às aulas"
+    ],
+    initialLikes: 289
+  },
+  {
+    id: "curso-mentoria-select",
+    title: "Mentoria Select",
+    category: "Mentoria Exclusiva",
+    image: "https://i.postimg.cc/1XGjGfbn/MENTORIA-SELECT.jpg",
+    checkoutUrl: "https://pay.kiwify.com.br/qG5K4nu",
+    badge: "Vagas Limitadas",
+    price: "Turma Select",
+    description: "Acompanhamento próximo e aprofundado com a Dra. Milena Colin para acelerar sua maturidade emocional e transformação pessoal.",
+    features: [
+      "Direcionamento estratégico e olhar clínico personalizado",
+      "Encontros focados na resolução de bloqueios emocionais",
+      "Fortalecimento da autonomia afetiva e tomada de decisão",
+      "Grupo seleto com troca qualificada e suporte contínuo"
+    ],
+    initialLikes: 247
+  },
+  {
+    id: "curso-3-pilares-sucesso",
+    title: "Os 3 Pilares do Sucesso",
+    category: "Desenvolvimento Pessoal",
+    image: "https://i.postimg.cc/NF6z65Zx/OS-3-PILARES-DO-SUCESSO.jpg",
+    checkoutUrl: "https://pay.kiwify.com.br/XPPAdmT",
+    badge: "Novo",
+    price: "Inscrição Aberta",
+    description: "Descubra os três fundamentos emocionais e comportamentais indispensáveis para sustentar realizações com leveza e propósito.",
+    features: [
+      "Clareza emocional como base para decisões consistentes",
+      "Equilíbrio entre vida pessoal, relações e carreira",
+      "Superação da autossabotagem e do medo de avançar",
+      "Plano prático para consolidar resultados duradouros"
+    ],
+    initialLikes: 183
+  },
+  {
+    id: "curso-partida-ano-prospero",
+    title: "Partida para um Ano Próspero",
+    category: "Planejamento & Vida",
+    image: "https://i.postimg.cc/Xqfzfpt8/PARTIDA-PARA-UM-ANO-PROSPERO.jpg",
+    checkoutUrl: "https://pay.kiwify.com.br/aJ1hgBl",
+    badge: "Inscrição Aberta",
+    price: "Acesso Imediato",
+    description: "O ponto de partida ideal para encerrar ciclos de desgaste emocional e iniciar uma nova fase com direção, paz e foco.",
+    features: [
+      "Fechamento consciente de ciclos e liberação de pendências",
+      "Definição de prioridades emocionais e relacionais",
+      "Ferramentas práticas para manter constância no novo ano",
+      "Acesso imediato para assistir no seu ritmo"
+    ],
+    initialLikes: 159
   }
 ];
 
