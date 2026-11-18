@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion } from "motion/react";
 import { 
   Heart, 
@@ -23,7 +23,6 @@ export default function CoursesSalesSection() {
   const [selectedCourseIndex, setSelectedCourseIndex] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -88,31 +87,6 @@ export default function CoursesSalesSection() {
   const handleNext = () => {
     scrollToCourse(currentIndex + 1);
   };
-
-  // Automatic Horizontal Carousel Switcher (Auto-play every 4.5s)
-  useEffect(() => {
-    if (isPaused || isModalOpen) return;
-
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const next = (prev + 1) % COURSES_LIST.length;
-        const container = scrollContainerRef.current;
-        const targetCard = cardRefs.current[next];
-        if (container && targetCard) {
-          const containerWidth = container.clientWidth;
-          const cardWidth = targetCard.offsetWidth;
-          const targetLeft = targetCard.offsetLeft - (containerWidth / 2 - cardWidth / 2);
-          container.scrollTo({
-            left: Math.max(0, targetLeft),
-            behavior: "smooth"
-          });
-        }
-        return next;
-      });
-    }, 4500);
-
-    return () => clearInterval(timer);
-  }, [isPaused, isModalOpen]);
 
   const handleOpenModal = (index: number) => {
     setSelectedCourseIndex(index);
@@ -191,12 +165,8 @@ export default function CoursesSalesSection() {
           </div>
         </div>
 
-        {/* Carousel Showcase Container with Hover Pause */}
-        <div 
-          className="relative group"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
+        {/* Carousel Showcase Container */}
+        <div className="relative group">
           {/* Floating Left Manual Arrow */}
           <button
             onClick={handlePrev}
