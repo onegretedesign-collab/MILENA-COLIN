@@ -39,57 +39,6 @@ export const COURSES_LIST: CourseItem[] = [
     initialLikes: 142
   },
   {
-    id: "curso-ano-prospero",
-    title: "Conquistando um Ano Próspero",
-    category: "Desenvolvimento Pessoal",
-    image: "https://i.postimg.cc/MGT0cf6h/CURSO-CONQUISTANDO-UM-ANO-PROSPERO.jpg",
-    checkoutUrl: "https://pay.kiwify.com.br/mrsIKN2",
-    badge: "Lote Especial",
-    price: "Inscrição Aberta",
-    description: "Aprenda a alinhar suas metas emocionais, mentais e espirituais para construir um ano de verdadeiros frutos e prosperidade integral.",
-    features: [
-      "Planejamento emocional e metas realistas",
-      "Ruptura de crenças limitantes sobre prosperidade",
-      "Gestão de rotina e equilíbrio entre vida pessoal e profissional",
-      "Planilha e mapa mental de acompanhamento"
-    ],
-    initialLikes: 198
-  },
-  {
-    id: "curso-familia-caos-ordem",
-    title: "Família: Do Caos à Ordem",
-    category: "Relações Familiares",
-    image: "https://i.postimg.cc/cJH7Kt1y/CURSO-FAMILIA-DO-CAOS-A-ORDEM.jpg",
-    checkoutUrl: "https://pay.kiwify.com.br/f4CIxgQ",
-    badge: "Destaque",
-    price: "Inscrição Aberta",
-    description: "Ferramentas sistêmicas para identificar dinâmicas disfuncionais, curar feridas familiares e restabelecer a harmonia e o respeito no lar.",
-    features: [
-      "Visão sistêmica da família e ordens do amor",
-      "Resolução de desentendimentos entre casais e familiares",
-      "Superação de mágoas e reestruturação do ambiente lar",
-      "Exercícios práticos de pacificação familiar"
-    ],
-    initialLikes: 256
-  },
-  {
-    id: "curso-mentoria",
-    title: "Mentoria Exclusiva",
-    category: "Acompanhamento em Grupo",
-    image: "https://i.postimg.cc/8C5dFfkN/CURSO-MENTORIA.jpg",
-    checkoutUrl: "https://pay.kiwify.com.br/qG5K4nu",
-    badge: "Vagas Limitadas",
-    price: "Turma Aberta",
-    description: "Mentoria focada na resolução de conflitos, fortalecimento da postura adulta e maturação emocional acelerada com suporte direto.",
-    features: [
-      "Encontros ao vivo direcionados e análises de casos reais",
-      "Direcionamento individualizado da Dra. Milena Colin",
-      "Comunidade exclusiva de alunas e trocas enriquecedoras",
-      "Material didático complementar de apoio"
-    ],
-    initialLikes: 310
-  },
-  {
     id: "acompanhamento-mensal",
     title: "Acompanhamento Mensal",
     category: "Suporte Contínuo",

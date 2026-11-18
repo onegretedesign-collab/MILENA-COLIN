@@ -154,18 +154,15 @@ export default function CourseDetailModal({
             <div className="overflow-y-auto flex-grow p-4 sm:p-6 md:p-8 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
                 
-                {/* Column 1: Capa do Curso em Destaque */}
+                {/* Column 1: Capa do Curso em Destaque Completa sem cortes */}
                 <div className="md:col-span-5 flex flex-col space-y-3">
-                  <div className="relative w-full rounded-2xl overflow-hidden bg-warm-sand/60 border border-warm-beige/80 shadow-md aspect-[4/5] sm:aspect-[4/4.5] md:aspect-[3/4] flex items-center justify-center group">
+                  <div className="relative w-full rounded-2xl overflow-hidden bg-[#FAF7F3] border border-warm-beige/80 shadow-md aspect-square flex items-center justify-center group">
                     <img
                       src={course.image}
                       alt={course.title}
-                      className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500"
+                      className="w-full h-full object-contain object-center transition-transform duration-500"
                       referrerPolicy="no-referrer"
                     />
-
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/20 pointer-events-none" />
 
                     {/* Floating Like Button */}
                     <button
@@ -198,13 +195,6 @@ export default function CourseDetailModal({
                         </span>
                       </div>
                     )}
-
-                    {/* Bottom Indicator on Cover */}
-                    <div className="absolute bottom-3 left-3 right-3 text-center pointer-events-none">
-                      <span className="inline-block bg-black/60 backdrop-blur-xs text-white/90 text-[11px] font-sans px-3 py-1 rounded-full">
-                        Capa Oficial do Treinamento
-                      </span>
-                    </div>
                   </div>
 
                   {/* Highlights under Cover */}

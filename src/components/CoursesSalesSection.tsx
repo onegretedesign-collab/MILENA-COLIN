@@ -249,17 +249,14 @@ export default function CoursesSalesSection() {
                       : "border-warm-beige shadow-xs hover:shadow-md hover:border-warm-terracotta/40 hover:-translate-y-1"
                   }`}
                 >
-                  {/* Top Image Box: Capa do Curso */}
-                  <div className="relative w-full h-52 sm:h-60 bg-warm-sand overflow-hidden">
+                  {/* Top Image Box: Capa do Curso Completa sem cortes */}
+                  <div className="relative w-full aspect-square bg-[#FAF7F3] overflow-hidden flex items-center justify-center">
                     <img
                       src={course.image}
                       alt={course.title}
-                      className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-contain object-center transition-transform duration-500"
                       referrerPolicy="no-referrer"
                     />
-
-                    {/* Subtle Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/25 pointer-events-none" />
 
                     {/* Floating Expand Prompt on Cover Hover */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 pointer-events-none">
