@@ -13,8 +13,6 @@ import {
   Sparkles, 
   ArrowRight,
   BookOpen,
-  Pause,
-  Play,
   Maximize2
 } from "lucide-react";
 import { COURSES_LIST, COURSES_DATA } from "../data/landingData";
@@ -169,19 +167,8 @@ export default function CoursesSalesSection() {
             </p>
           </div>
 
-          {/* Carousel Manual Switcher & Autoplay Pause Button */}
+          {/* Carousel Manual Switcher */}
           <div className="flex items-center space-x-3 self-start md:self-end">
-            {/* Pause / Play Button */}
-            <button
-              onClick={() => setIsPaused(!isPaused)}
-              className="flex items-center space-x-1.5 px-3 py-2 rounded-full bg-white border border-warm-beige hover:border-warm-terracotta text-warm-cocoa/80 hover:text-warm-terracotta text-xs font-mono transition-all shadow-xs cursor-pointer"
-              title={isPaused ? "Retomar reprodução automática" : "Pausar reprodução automática"}
-              aria-label={isPaused ? "Play" : "Pause"}
-            >
-              {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
-              <span className="hidden sm:inline">{isPaused ? "Retomar" : "Pausar"}</span>
-            </button>
-
             {/* Manual Switcher Left / Right */}
             <div className="flex items-center space-x-2">
               <button

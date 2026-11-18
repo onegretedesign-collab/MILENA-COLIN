@@ -25,7 +25,7 @@ export const COURSES_LIST: CourseItem[] = [
     id: "curso-educacao-tempos-dificeis",
     title: "Educação em Tempos Difíceis",
     category: "Educação & Parentalidade",
-    image: "https://i.postimg.cc/bvJ0GSYh/CURSO-EDUCACAO-EM-TEMPOS-DIFICEIS.jpg",
+    image: "https://i.postimg.cc/fbLCLrWJ/b1381362-65e3-4f3e-97b1-ffca0b3f73e4.jpg",
     checkoutUrl: "https://pay.kiwify.com.br/jgdhX5t",
     badge: "Mais Procurado",
     price: "Inscrição Aberta",
