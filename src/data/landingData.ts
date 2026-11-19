@@ -76,7 +76,7 @@ export const COURSES_LIST: CourseItem[] = [
     id: "curso-familia-caos-ordem-imersao",
     title: "Família: Do Caos à Ordem",
     category: "Relações Familiares",
-    image: "https://i.postimg.cc/Rh7D7N2t/FAMILIA-DO-CAOS-A-ORDEM.jpg",
+    image: "https://i.postimg.cc/8CLjSYqs/2cc18b4d-1710-4939-a187-2758ce537dc9.jpg",
     checkoutUrl: "https://pay.kiwify.com.br/j3LOUSo",
     badge: "Mais Procurado",
     price: "Inscrição Aberta",
@@ -88,23 +88,6 @@ export const COURSES_LIST: CourseItem[] = [
       "Aulas práticas com aplicação imediata no dia a dia"
     ],
     initialLikes: 218
-  },
-  {
-    id: "curso-familia-caos-ordem-completo",
-    title: "Família: Do Caos à Ordem — Curso Completo",
-    category: "Formação Completa",
-    image: "https://i.postimg.cc/1XGjGfbN/FAMILIA-DO-CAOS-A-ORDEM-CURSO-COMPLETO.jpg",
-    checkoutUrl: "https://pay.kiwify.com.br/f4CIxgQ",
-    badge: "Curso Completo",
-    price: "Inscrição Aberta",
-    description: "A formação completa com aprofundamento sistêmico e integrativo para reestruturar vínculos conjugais, parentais e familiares.",
-    features: [
-      "Módulos completos sobre dinâmica familiar e ordens do amor",
-      "Aprofundamento na relação entre pais, filhos e casal",
-      "Exercícios terapêuticos guiados para pacificação do lar",
-      "Material de apoio e acesso integral às aulas"
-    ],
-    initialLikes: 289
   },
   {
     id: "curso-mentoria-select",
